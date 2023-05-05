@@ -22,13 +22,13 @@ outputs = [0;1;1;0];
 for i=1:10000
     indexes = randperm(4);
     for j=1:length(indexes)
-       learn(inputs(indexes(j), :),outputs(indexes(j)),0.2)
+       learn(inputs(indexes(j), :),outputs(indexes(j)),0.2);
      end
     
     if mod(i,1000)==0
         cost = 0;
         for j=1:4
-            o = predict(inputs(j,:))
+            o = predict(inputs(j,:));
             cost = cost + (outputs(j,:) - o) ^ 2;
         end
         cost = cost / 4;
